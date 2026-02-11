@@ -1,24 +1,19 @@
 import random
-print(random.randint(1,10))
-
-
+random_number = (random.randint(1,10))
 guess_history = []
-guess = int(input("guess a number 1-10"))
-guess_history.append(guess)
-def we(guess, random):
-    global_guess = 0
-    for i in range(1,10):
-        if guess == random:
-            print("correct") 
-        elif guess < random:
-            print("higher")
+guess = 0
+
+while guess != random_number:
+    guess = int(input("guess a number 1-10"))
+       
+    if guess < random_number:
             guess_history.append(guess)
-        elif guess > random:
-            print("lower")
-            guess_history.append(guess)
-
-
-
+            print("higher", guess_history)
+    elif guess > random_number:
+            guess_history.append(guess) 
+            print("lower", guess_history)
+if guess == random_number:
+              print("correct", guess_history)
 
 
 
